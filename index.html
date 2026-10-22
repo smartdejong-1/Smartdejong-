@@ -89,7 +89,7 @@ async function admin(){
   const {data:songs}=await sb.from('songs').select('id,title,plays,downloads').order('created_at',{ascending:false});
   let lines=[],ti=0;
   v.innerHTML=`<div class="row" style="font-size:14px"><b style="color:var(--fg)">Add a song</b><a href="#" id="lo">Log out</a></div>
-  <div class="box"><label>Title</label><input id="ti"><label>Audio file (mp3, m4a, wav)</label><input id="fa" type="file" accept="audio/*"><label>Cover image (optional)</label><input id="fc" type="file" accept="image/*">
+  <div class="box"><label>Title</label><input id="ti"><label>Audio file (mp3, m4a, wav)</label><input id="fa" type="file"><label>Cover image (optional)</label><input id="fc" type="file" accept="image/*">
   <label>Lyrics (plain text, or LRC with [00:12.50] timestamps)</label><textarea id="lr"></textarea>
   <button class="ghost" id="sy">Tap to sync lyrics</button>
   <div id="sp" style="display:none;margin-top:10px"><audio id="pa" controls></audio><p id="nx" class="dim"></p><button id="tp">TAP when this line starts</button></div>
